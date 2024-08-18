@@ -1,0 +1,67 @@
+{
+	"name": "@sumotto/local-addon-tray",
+	"productName": "Tray",
+	"version": "1.0.0",
+	"author": "Kirill Sigalin",
+	"bgColor": "#51bb7b",
+	"icon": "assets/icon.svg",
+	"slug": "sumotto-local-addon-tray",
+	"description": "Instead of closing, it minimizes Local to tray.",
+	"renderer": "lib/renderer.js",
+	"main": "lib/main.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SumoTTo/local-addon-tray"
+	},
+	"bugs": {
+		"url": "https://github.com/SumoTTo/local-addon-tray/issues"
+	},
+	"license": "MIT",
+	"scripts": {
+		"prepack": "npm run lint && tsc && clean-package",
+		"pack": "npm pack",
+		"postpack": "clean-package restore",
+		"watch": "tsc --watch",
+		"lint": "eslint ."
+	},
+	"devDependencies": {
+		"@getflywheel/eslint-config-local": "^1.0.4",
+		"@getflywheel/local": "^9.0.5",
+		"@types/react": "^18.3.3",
+		"@typescript-eslint/eslint-plugin": "^8.1.0",
+		"@typescript-eslint/parser": "^8.1.0",
+		"clean-package": "^2.2.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-react": "^7.35.0",
+		"react": "^18.3.1",
+		"typescript": "^5.5.4"
+	},
+	"dependencies": {
+		"@getflywheel/local-components": "^17.8.0",
+		"electron-store": "^8.2.0",
+		"lodash": "^4.17.21"
+	},
+	"bundledDependencies": [
+		"@getflywheel/local-components",
+		"electron-store",
+		"lodash"
+	],
+	"engines": {
+		"local-by-flywheel": "^5.0.0"
+	},
+	"files": [
+		"assets",
+		"lib",
+		"LICENSE",
+		"package.json",
+		"README.md"
+	],
+	"clean-package": {
+		"remove": [
+			"scripts",
+			"devDependencies",
+			"clean-package"
+		]
+	}
+}
